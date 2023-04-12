@@ -58,8 +58,7 @@ _Steps to install security agent aws ec2 server using ansible playbook:_
 
 5. Create ansible playbook 'vi install_security_agent.yml' and enter the following code:
 
-      '''
-   ---
+```   ---
 - name: Install security agent on virtual machine instance
   hosts: security_agents
   become: true
@@ -82,19 +81,12 @@ _Steps to install security agent aws ec2 server using ansible playbook:_
       dest: /opt/csg_security_agent/security_agent_config.conf
       mode: '0600'
 
-
     - name: Install security agent
       shell: /opt/csg_security_agent/security_agent_installer.sh --config /opt/csg_security_agent/security_agent_config.conf --token CSG_$h4p3#7e
       register: command_output
 
     - debug:
-         var: command_output.stdout_lines
-      
-      '''
+         var: command_output.stdout_lines```
 
 6. Run the following ansible command to install security agent on ec2 server:
    ansible-playbook -i inventory.ini install_security_agent.yml
-
-
-
-
