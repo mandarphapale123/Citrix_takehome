@@ -54,7 +54,7 @@ _Steps to install security agent aws ec2 server using ansible playbook:_
    Enter the following code:
 
    [security_agents]
-   <IP addr of ec2 server> ansible_user=ubuntu ansible_ssh_private_key_file=<path to your .pem file>
+   'IP addr of ec2 server' ansible_user=ubuntu ansible_ssh_private_key_file=<path to your .pem file>
 
 5. Create ansible playbook 'vi install_security_agent.yml' and enter the following code:
       
